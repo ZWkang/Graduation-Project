@@ -1,5 +1,5 @@
-
-const LockTime = {};
+const LockTime = require('../../models/index.js').locktime
+// const LockTime = {};
 // exports.checkIsLock = function(time,){}
 
 exports.checkCanAddtoOrder = async function(room_id,starttime,endtime){

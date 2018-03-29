@@ -63,22 +63,16 @@ let registerAction = async function(ctx,next){
 }
 
 let be_active = async function(ctx,next){
-
-    // const body = ctx.request&&ctx.request.body
     const { body } = ctx.request;
     let active_value = body['key']||''
     if(!active_value){
-        // return ctx.body = {
-        //     success:false,
-        //     errormessage:'active值为空'
-        // }
         return ctx.throw(400,`请查看传入的key值是否正确`)
     }
     let result
     try{
         result = await users.findOne({"user_active":active_value})
         if(!result){
-            
+
             ctx.throw(400,'active值有误')
             return next()
         }

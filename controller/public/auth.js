@@ -1,3 +1,5 @@
+const users = require('../models/index.js').users;
+
 exports.checkuserPower = async function checkuserPower(auth,needauth){
     return (ctx,next)=>{
         if(auth - needauth > 0){
@@ -20,5 +22,5 @@ exports.checkauth = async function checkauth(userId){
 }
 
 exports.checkAuthContain = async function checkAuthContain (userId,needauth){
-    return checkuserPower(await checkauth(userId),needauth)
+    return await checkuserPower(await checkauth(userId),needauth)
 }

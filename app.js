@@ -6,15 +6,17 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
-const index = require('./routes/index')
-const users = require('./routes/users')
+// const index = require('./routes/index')
+// const users = require('./routes/users')
 // const articles = require('./routes/article')
-const collection = require('./routes/collect')
+// const collection = require('./routes/collect')
 const cors = require('kcors');
 const handler = require('./utils/hanlerError')
 const log = require('./utils/log.js')
 const jwt = require('jsonwebtoken')
 const jwtcheck = require('./utils/getheader')
+
+const loggers = require('./utils/loggermid.js')
 
 
 
@@ -23,7 +25,14 @@ const jwtcheck = require('./utils/getheader')
 // error handler
 onerror(app)
 
+
+
+
 // middlewares
+// 注入日志方法
+app.use(loggers)
+
+
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))

@@ -84,8 +84,8 @@ let be_active = async function(ctx,next){
             }
             return next()
         }
-        userM.update({"user_active":active_value},{$set:{"user_active":''}})
-        ctx.body = {
+        await userM.update({"user_active":active_value},{$set:{"user_active":''}})
+        return ctx.body = {
             success:true
         }
     }catch(e){

@@ -9,7 +9,7 @@ const room = require('./room')
 const roomType = require('./roomType')
 const star = require('./star');
 const users = require('./users');
-
+const pv = require('./pv');
 
 mongoose.Promise = global.Promise;
 

@@ -4,7 +4,7 @@ const AllModel = require('../models/index.js')
 
 const getHowManyStar = async function (roomId){
 
-    const {star } = AllModel;
+    const { star } = AllModel;
 
     const result = await AllModel.find({roomId});
     return {
@@ -22,5 +22,4 @@ const getUserMessage = async function (user_id){
     return {
         result
     }
-    
 }

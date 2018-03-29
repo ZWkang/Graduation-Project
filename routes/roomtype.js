@@ -19,7 +19,7 @@ const {
 
 router.post('/add', regist.registerAction)
 // router.post('/login',login.LoginAction)
-router.get('/list',getOneRoomType)
+router.get('/list/:',getOneRoomType)
 router.get('/lists',getAllRoomType)// 注册用户列表
 router.put('/update/:roomtypeid',updateRoomType) // 更改权限
 router.delete('/delete/:roomtypeid',deleteRoomType)

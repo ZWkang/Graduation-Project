@@ -7,7 +7,7 @@ const UsersSchema = new Schema({
     user_name:{type:String}, // 用户名
     user_password:{type:String}, // 用户密码
     user_email:{type:String,unique:true}, // 用户邮箱
-    user_phone:{type:String,unique:true}, // 用户电话
+    user_phone:{type:String,default:'123'}, // 用户电话
     user_active:{type:String}, // 用户是否激活
     user_photo:{type:String,default:'xxx'}, // 用户个人头像
     user_register_time:{type:String}, // 用户创建注册时间

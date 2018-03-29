@@ -56,7 +56,7 @@ exports.updateOrder = async function(ctx,next){
             break;
         case 'checkin':
             break;
-        case '':
+        case 'cancel':
             break;
         default:
             break;
@@ -142,7 +142,7 @@ async function checkin(ctx,orderid){
             return ctx.throw(500,'订单数据确认失败')
         }
 }
-async function checkin(ctx,orderid){
+async function checkout(ctx,orderid){
 
 }
 
