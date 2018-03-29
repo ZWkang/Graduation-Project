@@ -1,2 +1,1 @@
-# Graduation-Project
-这是一个酒店人员管理系统。
+## 一个很简单的koa小项目
