@@ -1,12 +1,12 @@
 const Order = require('../../models/index.js').order;
 const User = require('../../models/index.js').user;
 const checkin = require('../../models/index.js').checkin;
-exports.getOneOrder = function(id){
+exports.getOneOrder = function(ctx,next){
     
     const token = ctx._tokens;
     const { _id } = token;
     let orderId = this.ctx.params.id;
-    const data = await Order.findOne({_id:orderId});
+    const data = await Order.findOne({_id:orderId}).lean();
     let { order_status } = data;
 
     if(/111$/.test(order_status)){
@@ -82,7 +82,6 @@ exports.orderList = async function orderList(ctx,next){
     switch(ordertype){
         case 'all':
             result = await order.find({order_user_id:_id});
-
             break;
         case 'canceled':
             result = await order.find({

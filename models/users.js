@@ -21,4 +21,4 @@ UsersSchema.index({
     user_register_time:-1
 })
 
-return mongoose.model('users',UsersSchema)
+module.exports = mongoose.model('users',UsersSchema)

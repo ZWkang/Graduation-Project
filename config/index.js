@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
 	"MONGDB_URL": 'mongodb://127.0.0.1',
 	"MONGODB_USERNAME": '',
@@ -9,5 +10,6 @@ module.exports = {
 		"error": "./logs/error.log",
 		"access": "./logs/access.log"
 	},
-	"PROJECT_NAME": 'kangkang_hotel'
+	"PROJECT_NAME": 'kangkang_hotel',
+	"UPLOAD_PATH":path.join(__dirname,'..','public','upload'),
 }
